@@ -11,8 +11,6 @@ phases:
       - echo Building the Docker Image
       - docker build -t demoecr .
       - docker tag demoecr:latest 488599217855.dkr.ecr.us-east-1.amazonaws.com/demoecr:latest
-      - echo Compiling the Python code...
-      - python CreateCSV.py
   post_build:
     commands:
       - echo Build completed
