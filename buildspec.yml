@@ -4,15 +4,15 @@ phases:
   pre_build:
     commands:
       - echo logging into ECR
-      - $(aws ecr get-login --no-include-email --region us-east-1)
+      - aws ecr get-login --no-include-email --region us-east-1
   build:
     commands:
       - echo Build started
       - echo Building the Docker Image
-      - docker build -t demoecr .
-      - docker tag demoecr:latest 488599217855.dkr.ecr.us-east-1.amazonaws.com/demoecr:latest
+      - docker build -t demorepo .
+      - docker tag demorepo:latest 488599217855.dkr.ecr.us-east-1.amazonaws.com/demorepo:latest
   post_build:
     commands:
       - echo Build completed
       - echo pushing the Docker image
-      - docker push 488599217855.dkr.ecr.us-east-1.amazonaws.com/demoecr:latest
+      - docker push 488599217855.dkr.ecr.us-east-1.amazonaws.com/demorepo:latest
