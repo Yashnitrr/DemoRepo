@@ -1,0 +1,11 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Build started
+      - echo Compiling the Python code...
+      - python CreateCSV.py
+  post_build:
+    commands:
+      - echo Build completed
