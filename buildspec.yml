@@ -10,7 +10,8 @@ phases:
       - echo Build started
       - echo Building the Docker Image
       - docker build -t demorepo --build-arg GIT_COMMIT=$(git log -1 --format=%h) .
-      - docker tag demorepo:$(git rev-parse HEAD) 488599217855.dkr.ecr.us-east-1.amazonaws.com/demorepo:latest
+      - docker inspect demorepo | jq '.[].ContainerConfig.Labels'
+      - docker tag demorepo 488599217855.dkr.ecr.us-east-1.amazonaws.com/demorepo:latest
   post_build:
     commands:
       - echo Build completed
