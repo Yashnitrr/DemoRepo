@@ -1,6 +1,7 @@
 version: 0.2
-
-#IMAGE_TAG - $(git log -1 --format=%h)
+env:
+  variables:
+      IMAGE_TAG: $(git log -1 --format=%h)
 phases:
   pre_build:
     commands:
