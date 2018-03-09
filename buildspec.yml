@@ -11,10 +11,10 @@ phases:
     commands:
       - echo Build started
       - echo Building the Docker Image
-      - docker build -t demorepo .
-      - docker tag demorepo:$IMAGE_TAG 488599217855.dkr.ecr.us-east-1.amazonaws.com/demorepo:latest
+      - docker build -t demorepo:$IMAGE_TAG .
+      - docker tag demorepo:$IMAGE_TAG 488599217855.dkr.ecr.us-east-1.amazonaws.com/demorepo:$IMAGE_TAG
   post_build:
     commands:
       - echo Build completed
       - echo pushing the Docker image
-      - docker push 488599217855.dkr.ecr.us-east-1.amazonaws.com/demorepo:latest
+      - docker push 488599217855.dkr.ecr.us-east-1.amazonaws.com/demorepo:$IMAGE_TAG
