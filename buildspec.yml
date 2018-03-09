@@ -10,7 +10,7 @@ phases:
       - echo Build started
       - echo Building the Docker Image
       - docker build -t demorepo .
-      - docker tag demorepo:latest 488599217855.dkr.ecr.us-east-1.amazonaws.com/demorepo:latest
+      - docker tag ${git log -l --pretty=%h} 488599217855.dkr.ecr.us-east-1.amazonaws.com/demorepo:latest
   post_build:
     commands:
       - echo Build completed
