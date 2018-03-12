@@ -1,1 +1,1 @@
-print("Hello Updated tagging Shopin")
+print("Hello People, Docker Pulled")
