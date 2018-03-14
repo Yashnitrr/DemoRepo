@@ -1,1 +1,1 @@
-print("Hello People, Docker Pulled")
+print("Hello People ")
