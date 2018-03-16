@@ -17,3 +17,4 @@ phases:
       - echo pushing the Docker image
       - docker push 488599217855.dkr.ecr.us-east-1.amazonaws.com/demorepo:latest
       - pwd
+      - aws s3 cp . s3://yashnitrr
