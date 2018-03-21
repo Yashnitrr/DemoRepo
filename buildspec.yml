@@ -1,6 +1,20 @@
 version: 0.2
 
 phases:
+
   pre_build:
     commands:
-      - aws s3 cp . s3://yashcustom --recursive
+      - echo pre_build started
+      - echo sending the content of this repo to AWS S3 bucket
+      - s3cmd sync . s3://shopin-pipeline-attrpred/ --recursive
+      
+  build:
+    commands:
+      - echo Build started
+      - echo build stage executed successfully
+      
+  post_build:
+    commands:
+      - echo Build completed
+      - echo post_build stage executed successfully
+
