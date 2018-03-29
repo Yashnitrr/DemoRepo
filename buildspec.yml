@@ -4,7 +4,7 @@ phases:
 
   pre_build:
     commands:
-      - echo pre_build started
+      - echo pre_build started yeah.
       - echo sending the content of this repo to AWS S3 bucket
       - aws s3 cp . s3://shopin-pipeline-attrpred/ --recursive
       
