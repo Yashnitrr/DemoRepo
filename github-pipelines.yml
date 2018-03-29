@@ -1,3 +1,20 @@
-steps:
-- name: gcr.io/cloud-builders/gsutil
-args: ['cp', '.','gs://shopin-data']
+version: 0.2
+
+phases:
+
+  pre_build:
+    commands:
+      - echo pre_build started
+      - echo sending the content of this repo to AWS S3 bucket
+      - gsutil cp . gs://shopin-data/ --recursive
+      
+  build:
+    commands:
+      - echo Build started
+      - echo build stage executed successfully
+      
+  post_build:
+    commands:
+      - echo Build completed
+      - echo post_build stage executed successfully
+
