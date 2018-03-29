@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'gsutil cp . gs://shopin-data --recursive'
+                sh 'gsutil cp -r . gs://shopin-data'
             }
         }
     }
