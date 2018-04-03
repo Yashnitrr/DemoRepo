@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'gsutil cp -r . gs://shopin-data'
+                sh 'gsutil cp -r . gs://shopin-continuous-integration-data'
             }
         }
     }
