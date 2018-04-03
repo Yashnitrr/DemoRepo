@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                echo $'Yash Agrawal'
+                sh 'gsutil cp -r . gs://shopin-continuous-integration-data'
             }
         }
     }
