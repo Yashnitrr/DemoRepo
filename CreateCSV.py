@@ -1,1 +1,1 @@
-print("Hi Google People ")
+print("Docker image created ")
